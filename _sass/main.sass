@@ -1,0 +1,45 @@
+// @import "compass/reset"
+@import "compass/css3"
+@import "compass/typography"
+
+$default-border-radius: 5px
+
+// MIXINS
+
+@mixin monospace
+  color: #aaa
+  font-family: Monaco, "Courier New", monospace
+
+@mixin code
+  border: 1px solid #ddd
+  background-color: #eef
+
+// POST
+
+#post
+  #content
+    code
+      @include code
+      padding: 0 .2em
+
+    pre
+      @include code
+      @include border-radius
+      padding: 1em
+
+      code
+        border: none
+        padding: none
+
+      &.terminal
+        border: 1px solid #000
+        background-color: #333
+        color: #fff
+
+        code
+          background-color: #333
+
+  #categories
+    @include delimited-list("|")
+    .category:after
+      margin: 0 .5em
