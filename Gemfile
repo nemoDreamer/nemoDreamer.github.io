@@ -1,3 +1,3 @@
-gem 'jekyll'
-gem 'compass'
-gem 'jekyll-compass'
+source 'https://rubygems.org'
+
+gem 'github-pages'
